@@ -1,0 +1,471 @@
+/* =========================================================
+ * PCPI Workflow Engine — Styles
+ * ======================================================= */
+
+/* Review page: display-field look */
+body.pcpi-review-page .pcpi-review-mode__source input[readonly],
+body.pcpi-review-page .pcpi-review-mode__source textarea[readonly],
+body.pcpi-review-page .pcpi-review-mode__source select[disabled],
+body.pcpi-review-page .pcpi-review-mode__source input[disabled]{
+  background:#f3f4f6 !important;
+  border-color:#f3f4f6 !important;
+  color:#111827 !important;
+  box-shadow:none !important;
+  outline:none !important;
+  opacity:1 !important;
+  cursor:default !important;
+}
+
+body.pcpi-review-page .pcpi-review-mode__source .gform_footer{ display:none !important; }
+
+body.pcpi-review-page .pcpi-review-mode__source .gfield[class*="pcpi-comment-"]{
+  margin-top:12px; padding-top:12px; border-top:1px dashed rgba(0,0,0,.15);
+}
+
+/* ---------------------------------------------------------
+ * Review footer layout
+ * - Keep Previous/Next on the left
+ * - Push Submit to the right
+ * - Review-only (scoped to pcpi-review-page)
+ * ------------------------------------------------------ */
+
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_footer,
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_page_footer{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:nowrap;
+}
+
+/* Prevent Gravity Forms theme from forcing full-width buttons */
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_footer input,
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_footer button,
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_page_footer input,
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_page_footer button{
+  width:auto !important;
+  margin:0 !important;
+}
+
+/* Push Submit button to the right */
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_footer .gform_button,
+body.pcpi-review-page .pcpi-review-mode__review .gform_wrapper .gform_page_footer .gform_button{
+  margin-left:auto !important;
+}
+
+/* List field row controls */
+body.pcpi-review-page .pcpi-review-mode__source button.edit-button,
+body.pcpi-review-page .pcpi-review-mode__source button.delete-button{ display:none !important; }
+
+body.pcpi-review-page .pcpi-review-mode__source .add_list_item,
+body.pcpi-review-page .pcpi-review-mode__source .gfield_list_icons{ display:none !important; }
+
+body.pcpi-review-page .pcpi-review-mode__source .gfield_list_group input,
+body.pcpi-review-page .pcpi-review-mode__source .gfield_list_group select,
+body.pcpi-review-page .pcpi-review-mode__source .gfield_list_group textarea,
+body.pcpi-review-page .pcpi-review-mode__source .gfield_list_group button{
+  pointer-events:none !important; cursor:default !important;
+}
+
+/* GP Nested Forms */
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-add-entry,
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-add-entry-button,
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-add-entry-btn,
+body.pcpi-review-page .pcpi-review-mode__source [data-gpnf-add-entry],
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-add-entry-container{ display:none !important; }
+
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-edit-entry,
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-delete-entry,
+body.pcpi-review-page .pcpi-review-mode__source a.gpnf-edit-entry,
+body.pcpi-review-page .pcpi-review-mode__source a.gpnf-delete-entry{ display:none !important; }
+
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-nested-entries,
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-nested-entries *{
+  pointer-events:none !important; cursor:default !important;
+}
+body.pcpi-review-page .pcpi-review-mode__source .gpnf-nested-entries{ user-select:text; }
+
+.gform_wrapper input[type="text"]::placeholder {
+  color: #c4c7cc;
+}
+
+/* -------------------------------------------------
+ * PCPI — Hide Gravity Forms Grid Spacer Fields
+ * Scoped to PCPI questionnaire + review pages only
+ * ------------------------------------------------- */
+body.pcpi-review-page .gform_wrapper .gfield.spacer,
+body.pcpi-questionnaire-page .gform_wrapper .gfield.spacer{
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* =========================================================
+ * PCPI Kiosk Styles — VAST Weightlifting Questionnaire
+ * File: kiosk-style.css
+ * Scope: ONLY this workflow page
+ * Body class is added by the PCPI workflow system.
+ * ======================================================= */
+
+body.pcpi-entry-mode-kiosk {}
+
+/* ---------------------------------------------------------
+ * Instruction blocks
+ * ------------------------------------------------------ */
+/* Add this class to the instruction HTML/Section field: pcpi-instructions */
+body.pcpi-entry-mode-kiosk .pcpi-instructions{
+  background: #f5f7fa;
+  padding: 18px;
+  border-radius: 6px;
+  /* margin-bottom: 24px; */
+  font-size: 15px;
+}
+
+/* -------------------------------------------------
+ * PCPI Instruction Block with Dashicon
+ * ------------------------------------------------- */
+
+body.pcpi-entry-mode-kiosk .pcpi-instructions{
+  position: relative;
+  padding: 20px 20px 20px 64px; /* more breathing room */
+  background: #f5f7fa;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Larger, cleaner icon */
+body.pcpi-entry-mode-kiosk .pcpi-instructions::before{
+  content: "\f348"; /* dashicons-info */
+  font-family: dashicons;
+
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 26px;       /* bigger */
+  line-height: 1;
+
+  color: #374151;        /* softer than black */
+}
+
+/* ---------------------------------------------------------
+ * YES/NO radios as buttons (ALL questions)
+ * Applies to every radio choice pair in this workflow.
+ * ------------------------------------------------------ */
+
+body.pcpi-entry-mode-kiosk .gfield_radio{
+  display: flex !important;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Each choice becomes a "button" */
+body.pcpi-entry-mode-kiosk .gfield_radio .gchoice{
+  position: relative;
+  margin: 0 !important;
+  flex: 0 0 auto;
+}
+
+/* Invisible radio covers the label so the entire button is clickable */
+body.pcpi-entry-mode-kiosk .gfield_radio .gchoice input[type="radio"]{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;          /* hide circle */
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* The label is the visible button */
+body.pcpi-entry-mode-kiosk .gfield_radio .gchoice label{
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 140px;
+  height: 44px;
+  padding: 0 14px;
+
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+  background: #eeeeee;
+
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+  user-select: none;
+  cursor: pointer;
+
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+/* Hover */
+body.pcpi-entry-mode-kiosk .gfield_radio .gchoice label:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  background: #e6e6e6;
+}
+
+/* Selected state (modern browsers) */
+body.pcpi-entry-mode-kiosk
+.gfield_radio .gchoice:has(input[type="radio"]:checked) label{
+  background: #111827;
+  border-color: #111827;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.14);
+}
+
+/* Reduce accidental double-taps selecting text */
+body.pcpi-entry-mode-kiosk .gfield_radio .gchoice label *{
+  pointer-events: none;
+}
+
+body.pcpi-entry-mode-kiosk 
+.gfield_radio .gchoice input[type="radio"]:active + label{
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------
+ * "Mark all as No" button (ghost style)
+ * ------------------------------------------------------ */
+
+body.pcpi-entry-mode-kiosk button.gf-toggle-all-no,
+body.pcpi-entry-mode-kiosk .gf-toggle-all-no{
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 8px 14px !important;
+  border-radius: 4px !important;
+
+  background: transparent !important;
+  border: 1px solid #d1d5db !important;
+  color: #111827 !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+
+  box-shadow: none !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  user-select: none !important;
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 120ms ease !important;
+}
+
+body.pcpi-entry-mode-kiosk button.gf-toggle-all-no:hover,
+body.pcpi-entry-mode-kiosk .gf-toggle-all-no:hover{
+  background: #f3f4f6 !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.06) !important;
+  transform: translateY(-1px) !important;
+}
+
+body.pcpi-entry-mode-kiosk button.gf-toggle-all-no:active,
+body.pcpi-entry-mode-kiosk .gf-toggle-all-no:active{
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+body.pcpi-entry-mode-kiosk button.gf-toggle-all-no:focus-visible,
+body.pcpi-entry-mode-kiosk .gf-toggle-all-no:focus-visible{
+  outline: 2px solid #111827 !important;
+  outline-offset: 2px !important;
+}
+
+/* ---------------------------------------------------------
+ * Multi-page footer navigation (Previous left, Next/Submit right)
+ * Uses CSS Grid for stability (prevents “jumping”)
+ * ------------------------------------------------------ */
+
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  width: 100% !important;
+
+  border-top: 1px solid #d4d4d4;
+  padding-top: 20px;
+
+  transition: none !important;
+}
+
+/* Left: Previous */
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer .gform_previous_button{
+  grid-column: 1 !important;
+  justify-self: start !important;
+}
+
+/* Right: Next */
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer .gform_next_button{
+  grid-column: 2 !important;
+  justify-self: end !important;
+}
+
+/* Right: Submit (last page) */
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer .gform_button{
+  grid-column: 2 !important;
+  justify-self: end !important;
+}
+
+/* Page 1 (only Next) / last page (only Submit) */
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer > input:only-child{
+  grid-column: 2 !important;
+  justify-self: end !important;
+}
+
+/* Equalize nav button sizing */
+body.pcpi-entry-mode-kiosk .gform-page-footer.gform_page_footer input{
+  width: 130px !important;
+  height: 42px !important;
+  float: none !important;
+  margin: 0 !important;
+  transition: none !important;
+}
+
+/* ---------------------------------------------------------
+ * Progress bar tweaks
+ * ------------------------------------------------------ */
+
+body.pcpi-entry-mode-kiosk .gform-theme--framework .gf_progressbar .gf_progressbar_percentage{
+  block-size: 3px !important;
+}
+
+/* ---------------------------------------------------------
+ * Readability tweaks
+ * ------------------------------------------------------ */
+
+body.pcpi-entry-mode-kiosk .gsection_description{
+  max-width: 720px;
+}
+
+body.pcpi-entry-mode-kiosk .gform_required_legend{
+	text-align: right;
+}
+
+/* =========================================================
+ * Kiosk (VAST Weightlifting): kill the tiny GF button spinner/loader
+ * ======================================================= */
+
+/* Hide the theme-framework loader that appears near buttons */
+body.pcpi-entry-mode-kiosk
+.gform-theme-button--loading::after,
+body.pcpi-entry-mode-kiosk
+.gform-theme-button--loading::before{
+  display: none !important;
+  content: none !important;
+}
+
+/* Some builds use a child element for the loader */
+body.pcpi-entry-mode-kiosk
+.gform-theme-button .gform-theme-spinner,
+body.pcpi-entry-mode-kiosk
+.gform-theme-button .gform-spinner,
+body.pcpi-entry-mode-kiosk
+.gform-theme-button .gform-loader{
+  display: none !important;
+}
+
+/* Just in case the legacy ajax spinner img exists anywhere */
+body.pcpi-entry-mode-kiosk
+img.gform_ajax_spinner{
+  display: none !important;
+}
+
+
+/* =========================================================
+ * Kiosk: centered loading overlay (GF multipage transitions)
+ * ======================================================= */
+
+body.pcpi-entry-mode-kiosk .pcpi-gf-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(2px);
+}
+
+body.pcpi-entry-mode-kiosk .pcpi-gf-loading.is-active {
+  display: flex;
+}
+
+body.pcpi-entry-mode-kiosk .pcpi-gf-loading__panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Simple CSS spinner */
+body.pcpi-entry-mode-kiosk .pcpi-gf-loading__spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d1d5db;
+  border-top-color: #111827;
+  border-radius: 999px;
+  animation: pcpi-spin 700ms linear infinite;
+}
+
+@keyframes pcpi-spin { to { transform: rotate(360deg); } }
+
+/* =========================================================
+ * Kiosk: FORCE-hide *all* Gravity Forms AJAX spinners
+ * (covers element spinners + pseudo-element spinners)
+ * ======================================================= */
+
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform_ajax_spinner,
+body.pcpi-entry-mode-kiosk .gform_wrapper img.gform_ajax_spinner,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform-spinner,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform-theme-spinner,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform-loader,
+body.pcpi-entry-mode-kiosk .gform_wrapper [class*="spinner"],
+body.pcpi-entry-mode-kiosk .gform_wrapper [class*="ajax_spinner"]{
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Some builds render the spinner as a pseudo-element (common in “theme framework” styles) */
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform_page_footer::before,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform_page_footer::after,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform_footer::before,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform_footer::after,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform-theme-button--loading::before,
+body.pcpi-entry-mode-kiosk .gform_wrapper .gform-theme-button--loading::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
