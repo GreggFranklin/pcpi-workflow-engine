@@ -32,6 +32,7 @@ trait PCPI_WFE_Trait_Registry {
 	 *
 	 *   'questionnaire_page_path' => '/form-example-questionnaire/',
 	 *   'review_page_path'        => '/form-example-review/',
+	 *.  'confirmation_page_path' => '/confirmation-page/',
 	 *
 	 *   'pdf_id' => 'abc123',
 	 *
@@ -59,6 +60,7 @@ trait PCPI_WFE_Trait_Registry {
 				'review_parent_applicant_field_id'        => 3,
 				'questionnaire_page_path' => '/form-polygraph-questionnaire/',
 				'review_page_path'        => '/form-polygraph-questionnaire-review/',
+				'confirmation_page_path' => '/confirmation-page/',
 				'pdf_id'                  => '690f9d2e167ec',
 				'features' => [],
 			],
@@ -76,6 +78,7 @@ trait PCPI_WFE_Trait_Registry {
 				'review_parent_applicant_field_id'        => 3,
 				'questionnaire_page_path' => '/form-vast-questionnaire/',
 				'review_page_path'        => '/form-vast-questionnaire-review/',
+				'confirmation_page_path' => '/confirmation-page/',
 				'pdf_id'                  => '698652e8ec09d',
 				'entry_mode'              => 'kiosk',
 				'features' => [
@@ -95,6 +98,7 @@ trait PCPI_WFE_Trait_Registry {
 				'has_review'                  => false,
 				'questionnaire_parent_applicant_field_id' => 579,
 				'questionnaire_page_path' => '/form-citrus-heights-questionnaire/',
+				'confirmation_page_path' => '/confirmation-page/',
 				'pdf_id'                  => '690f9d2e167ec',
 				'features' => [],
 			],
@@ -108,6 +112,7 @@ trait PCPI_WFE_Trait_Registry {
 				'has_review'                  => false,
 				'questionnaire_parent_applicant_field_id' => 579,
 				'questionnaire_page_path' => '/form-oakland-questionnaire/',
+				'confirmation_page_path' => '/confirmation-page/',
 				'pdf_id'                  => '69d02f55d84c1',
 				'features' => [],
 			],
@@ -122,6 +127,7 @@ trait PCPI_WFE_Trait_Registry {
 				'review_parent_questionnaire_field_id' => 1,
 				'questionnaire_page_path' => '/form-wada-questionnaire/',
 				'review_page_path'        => '/form-wada-review/',
+				'confirmation_page_path' => '/kiosk-confirmation/',
 				'pdf_id'                  => '6993b634ce4d2',
 				'entry_mode' => 'kiosk',
 				'features' => [
